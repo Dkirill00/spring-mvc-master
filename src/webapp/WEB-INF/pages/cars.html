@@ -1,0 +1,84 @@
+<!-- cars.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cars | Mav Farm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9fafb;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: auto;
+            max-width: 900px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+        }
+        th {
+            font-weight: 600;
+            text-align: left;
+            padding: 12px;
+            color: #374151;
+            background-color: #f3f4f6;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover td {
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body>
+<div class="flex justify-center my-4">
+    <h1 class="text-4xl font-bold text-purple-600">Cars</h1>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${carList}">
+        <td th:text="${car.brand}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.year}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title></title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div>-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>Brand</th>-->
+<!--            <th>Model</th>-->
+<!--            <th>Year</th>-->
+<!--        </tr>-->
+<!--        <tr th:each="cars : ${carList}">-->
+<!--            <td class="align-middle" th:text="${cars.brand}"></td>-->
+<!--            <td class="align-middle" th:text="${cars.model}"></td>-->
+<!--            <td class="align-middle" th:text="${cars.year}"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
